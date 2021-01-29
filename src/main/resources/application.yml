@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: cr
+server:
+  port: 8081
