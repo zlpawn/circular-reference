@@ -3,7 +3,8 @@ package com.spring.cr.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author:zl
@@ -14,6 +15,15 @@ public class CrOne {
 
     @Autowired
     private CrTwo crTwo;
+
+//    public CrOne(CrTwo crTwo){
+//        this.crTwo = crTwo;
+//    }
+
+    @PostConstruct
+    public void pawn(){
+        System.err.println(123);
+    }
 
     @Async
     //@Transactional

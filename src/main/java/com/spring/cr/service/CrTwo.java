@@ -1,7 +1,6 @@
 package com.spring.cr.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Async;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,12 +8,15 @@ import org.springframework.stereotype.Service;
  * @create_time: 2021/1/28
  */
 @Service
+@Lazy
 public class CrTwo {
 
-    @Autowired
     private CrOne crOne;
 
-    @Async
+    public CrTwo(CrOne crOne){
+        this.crOne = crOne;
+    }
+
     public void test(){
 
     }
